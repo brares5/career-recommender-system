@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+         xmlns:job="http://example.org/job#">
+  <rdf:Description rdf:about="http://example.org/job#1">
+    <job:title>Analyst</job:title>
+    <job:description>Designs, analyzes and tests software solutions to meet user needs.</job:description>
+    <job:skills>
+      <rdf:Bag>
+        <rdf:li>Information gathering</rdf:li>
+        <rdf:li>Taking decisions and solving problems</rdf:li>
+      </rdf:Bag>
+    </job:skills>
+    <job:educational_fields>
+      <rdf:Bag>
+        <rdf:li>System analysis</rdf:li>
+        <rdf:li>Basic programming</rdf:li>
+        <rdf:li>Analysis and making decisions</rdf:li>
+      </rdf:Bag>
+    </job:educational_fields>
+    <job:experience>1</job:experience>
+    <job:company>
+      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization1">
+         <vcard:Orgname>Microsoft</vcard:Orgname>
+         <vcard:Orgname>Cegeka</vcard:Orgname>
+         <vcard:Orgname>Adobe</vcard:Orgname>
+      </rdf:Description>
+    </job:company>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/job#2">
+    <job:title>Software engineer</job:title>
+    <job:description>Research, analyze and evaluate requirements for existing or new IT applications and operating systems, design, develop, test and maintain software solutions to meet these requirements.</job:description>
+    <job:skills>
+      <rdf:Seq>
+        <rdf:li>Creative thinking</rdf:li>
+        <rdf:li>Problem identification</rdf:li>
+      </rdf:Seq>
+    </job:skills>
+    <job:educational_fields>
+      <rdf:Seq>
+        <rdf:li>Software engineering</rdf:li>
+        <rdf:li>Telecommunication</rdf:li>
+        <rdf:li>System analysis</rdf:li>
+      </rdf:Seq>
+    </job:educational_fields>
+    <job:experience>3</job:experience>
+    <job:company>
+              <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization2">
+                <vcard:Orgname>UPB</vcard:Orgname>
+                <vcard:Orgname>Microsoft</vcard:Orgname>
+                <vcard:Orgname>Google</vcard:Orgname>
+              </rdf:Description>
+    </job:company>
+  </rdf:Description>
+</rdf:RDF>

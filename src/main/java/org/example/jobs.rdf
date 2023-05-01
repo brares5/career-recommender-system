@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:job="http://example.com/job#"
+         xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+
+  <rdf:Description rdf:about="http://example.com/job#Job1">
+    <rdf:type rdf:resource="http://example.com/job#FullTimeJob"/>
+    <job:title>Analyst</job:title>
+    <job:description>Designs, analyzes and tests software solutions to meet user needs.</job:description>
+    <job:skills rdf:parseType="Collection">
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#Skill"/>
+        <job:name>Information gathering</job:name>
+      </rdf:Description>
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#Skill"/>
+        <job:name>Taking decisions and solving problems</job:name>
+      </rdf:Description>
+    </job:skills>
+    <job:educationalFields rdf:parseType="Collection">
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#EducationalField"/>
+        <job:name>System analysis</job:name>
+      </rdf:Description>
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#EducationalField"/>
+        <job:name>Basic programming</job:name>
+      </rdf:Description>
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#EducationalField"/>
+        <job:name>Analysis and making decisions</job:name>
+      </rdf:Description>
+    </job:educationalFields>
+    <job:experience>1</job:experience>
+    <job:companies rdf:parseType="Collection">
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#Company"/>
+        <job:name>Adobe</job:name>
+      </rdf:Description>
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#Company"/>
+        <job:name>Cegeka</job:name>
+      </rdf:Description>
+      <rdf:Description>
+        <rdf:type rdf:resource="http://example.com/job#Company"/>
+        <job:name>Microsoft</job:name>
+      </rdf:Description>
+    </job:companies>
+  </rdf:Description>
+
+</rdf:RDF>

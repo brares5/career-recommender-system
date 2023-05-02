@@ -21,7 +21,7 @@ public class JobServiceImpl implements JobService {
 //    String source = JobServiceImpl.class.getClassLoader().getResource("jobs.rdf").getPath();
 
     static String source = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\tryjobs.rdf";
-    static String destination = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\blabla.rdf";
+    static String destination = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\tryjobs.rdf";
 
 
     @Override
@@ -58,6 +58,11 @@ public class JobServiceImpl implements JobService {
 
         try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
             ResultSet results = qexec.execSelect();
+
+            if (!results.hasNext()) {
+                throw new RuntimeException("Job with ID " + id + " not found");
+            }
+
             while (results.hasNext()) {
                 QuerySolution soln = results.nextSolution();
                 String title = soln.getLiteral("title").toString();
@@ -283,7 +288,7 @@ public class JobServiceImpl implements JobService {
             in.close();
             long newJobId = getLargestId() + 1;
             Resource job = model.createResource(nsJob + newJobId);
-            job.addProperty(VCARD.TITLE, jobToCreate.getTitle())
+            job.addProperty(model.createProperty("http://example.org/job#title"), jobToCreate.getTitle())
                     .addProperty(model.createProperty("http://example.org/job#description"), jobToCreate.getDescription());
 
 

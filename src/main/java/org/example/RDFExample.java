@@ -4,6 +4,7 @@ package org.example;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.update.UpdateAction;
 import org.apache.jena.vocabulary.*;
 
 import java.io.*;
@@ -23,7 +24,7 @@ public class RDFExample {
         try {
             in = RDFDataMgr.open(source);
             model.read(in, null);
-//            model.write(System.out);
+            model.write(System.out);
             in.close();
             Resource job = model.createResource(nsJob + "3");
             job.addProperty(VCARD.TITLE, "Java Developer")
@@ -43,6 +44,7 @@ public class RDFExample {
                 fieldsSeq.add(model.createTypedLiteral(field));
             }
             job.addProperty(model.createProperty("http://example.org/job#educational_fields"), fieldsSeq);
+            job.addProperty(RDF.type, model.createResource(nsJob + "Job"));
 
 
             job
@@ -66,8 +68,8 @@ public class RDFExample {
 //            model.removeAll(null, null, job2);
 //            model.removeAll(job2, null, null);
 //
-////            model.remove(model.listStatements(job2, null, (RDFNode) null));
-////            model.remove(model.listStatements(null, null, (RDFNode) job2));
+//            model.remove(model.listStatements(job2, null, (RDFNode) null));
+//            model.remove(model.listStatements(null, null, (RDFNode) job2));
 //            model.write(System.out);
 //            model.write(out, "RDF/XML-ABBREV");
 //            out.close();
@@ -75,104 +77,148 @@ public class RDFExample {
 //            throw new RuntimeException(e);
 //        }
 
-        String id = "1";
-
-        String queryString = "PREFIX job: <http://example.org/job#>\n"
-                + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
-                + "PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>\n"
-                + "SELECT ?title ?description ?skill ?eduField ?experience ?company\n"
-                + "WHERE {\n"
-                + "  job:" + id + " job:title ?title ;\n"
-                + "      job:description ?description ;\n"
-                + "      job:skills ?skills ;\n"
-                + "      job:experience ?experience .\n"
-
-                + "}";
-
-
-        Query query = QueryFactory.create(queryString);
-
-        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
-            System.out.println("bbb");
-            ResultSet results = qexec.execSelect();
-            while (results.hasNext()) {
-                System.out.println("aaa");
-                QuerySolution soln = results.nextSolution();
-                String title = soln.getLiteral("title").toString();
-                String description = soln.get("description").toString();
-                String experience = soln.get("experience").toString();
-                System.out.println("Title: " + title);
-                System.out.println("Description: " + description);
-                System.out.println("Experience: " + experience);
-            }
-        }
-
-        queryString = "PREFIX job: <http://example.org/job#>\n" +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>\n" +
-                "SELECT ?skill\n" +
-                "WHERE {\n" +
-                "  job:" + id + " job:skills ?skills .\n" +
-                "   ?skills rdf:_1|rdf:_2 ?skill .\n" +
-                "}";
-
-        Query querySkills = QueryFactory.create(queryString);
-        List<String> skills = new ArrayList<>();
-        try (QueryExecution qexecSkills = QueryExecutionFactory.create(querySkills, model)) {
-            ResultSet results = qexecSkills.execSelect();
-            while (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                RDFNode field = soln.get("skill");
-                skills.add(field.toString());
-            }
-        }
-        System.out.println("Skills: " + skills);
+//        try {
+//            out = new FileOutputStream(destination);
+//            Resource job2 = model.getResource("http://example.org/job#2");
+//
+//            // Remove all statements related to job#2
+//            StmtIterator iter = model.listStatements(job2, null, (RDFNode)null);
+//            List<Statement> stmts = iter.toList();
+//            model.remove(stmts);
+//            iter = model.listStatements(null, null, job2);
+//            stmts = iter.toList();
+//            model.remove(stmts);
+//            model.removeAll(job2, null, (RDFNode)null);
+//            model.remove(job2, model.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#li"), (RDFNode) null);
+//
+//            model.write(System.out);
+//            model.write(out, "RDF/XML-ABBREV");
+//            out.close();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
 
-        // Query for educational fields
-        String eduFieldQueryString = "PREFIX job: <http://example.org/job#>\n" +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "SELECT ?eduField\n" +
-                "WHERE {\n" +
-                "  job:" + id + " job:educational_fields ?eduFields .\n" +
-                "   ?eduFields rdf:_1|rdf:_2 ?eduField .\n" +
-                "}";
-        List<String> eduFields = new ArrayList<>();
-
-        Query eduFieldQuery = QueryFactory.create(eduFieldQueryString);
-        try (QueryExecution qexecEdu = QueryExecutionFactory.create(eduFieldQuery, model)) {
-            ResultSet results = qexecEdu.execSelect();
-            while (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                RDFNode eduField = soln.get("eduField");
-                eduFields.add(eduField.toString());
-            }
-        }
-
-        // Query for companies
-        String companyQueryString = "PREFIX job: <http://example.org/job#>\n" +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>\n" +
-                "SELECT ?company\n" +
-                "WHERE {\n" +
-                "  job:" + id + " job:company ?companyNode .\n" +
-                "   ?companyNode vcard:Orgname ?company .\n" +
-                "}";
-        List<String> companies = new ArrayList<>();
-
-        Query companyQuery = QueryFactory.create(companyQueryString);
-        try (QueryExecution qexecCompanies = QueryExecutionFactory.create(companyQuery, model)) {
-            ResultSet results = qexecCompanies.execSelect();
-            while (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                RDFNode company = soln.get("company");
-                companies.add(company.toString());
-            }
-        }
+//        try {
+//            out = new FileOutputStream(destination);
+////            String jobUri = "http://example.org/job#2";
+//            String jobUri = "http://example.org/job#2";
+//            String sparql = "PREFIX job: <http://example.org/job#>\n"
+//                    + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+//                    + "DELETE {\n" +
+//                    "  ?s ?p ?o .\n" +
+//                    "}\n" +
+//                    "WHERE {\n" +
+//                    "  ?s ?p ?o .\n" +
+//                    "  FILTER ( ?s = job:Job && ?s = <http://example.org/job#2> )\n" +
+//                    "}";
+//            UpdateAction.parseExecute(sparql, model);
+//            model.write(System.out);
+//            model.write(out, "RDF/XML-ABBREV");
+//            out.close();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
 
-        System.out.println("Ed fields: " + eduFields);
-        System.out.println("Companies: " + companies);
+//        String id = "1";
+//
+//        String queryString = "PREFIX job: <http://example.org/job#>\n"
+//                + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+//                + "PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>\n"
+//                + "SELECT ?title ?description ?skill ?eduField ?experience ?company\n"
+//                + "WHERE {\n"
+//                + "  job:" + id + " job:title ?title ;\n"
+//                + "      job:description ?description ;\n"
+//                + "      job:skills ?skills ;\n"
+//                + "      job:experience ?experience .\n"
+//
+//                + "}";
+//
+//
+//        Query query = QueryFactory.create(queryString);
+//
+//        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+//            System.out.println("bbb");
+//            ResultSet results = qexec.execSelect();
+//            while (results.hasNext()) {
+//                System.out.println("aaa");
+//                QuerySolution soln = results.nextSolution();
+//                String title = soln.getLiteral("title").toString();
+//                String description = soln.get("description").toString();
+//                String experience = soln.get("experience").toString();
+//                System.out.println("Title: " + title);
+//                System.out.println("Description: " + description);
+//                System.out.println("Experience: " + experience);
+//            }
+//        }
+//
+//        queryString = "PREFIX job: <http://example.org/job#>\n" +
+//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+//                "PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>\n" +
+//                "SELECT ?skill\n" +
+//                "WHERE {\n" +
+//                "  job:" + id + " job:skills ?skills .\n" +
+//                "   ?skills rdf:_1|rdf:_2 ?skill .\n" +
+//                "}";
+//
+//        Query querySkills = QueryFactory.create(queryString);
+//        List<String> skills = new ArrayList<>();
+//        try (QueryExecution qexecSkills = QueryExecutionFactory.create(querySkills, model)) {
+//            ResultSet results = qexecSkills.execSelect();
+//            while (results.hasNext()) {
+//                QuerySolution soln = results.nextSolution();
+//                RDFNode field = soln.get("skill");
+//                skills.add(field.toString());
+//            }
+//        }
+//        System.out.println("Skills: " + skills);
+//
+//
+//        // Query for educational fields
+//        String eduFieldQueryString = "PREFIX job: <http://example.org/job#>\n" +
+//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+//                "SELECT ?eduField\n" +
+//                "WHERE {\n" +
+//                "  job:" + id + " job:educational_fields ?eduFields .\n" +
+//                "   ?eduFields rdf:_1|rdf:_2 ?eduField .\n" +
+//                "}";
+//        List<String> eduFields = new ArrayList<>();
+//
+//        Query eduFieldQuery = QueryFactory.create(eduFieldQueryString);
+//        try (QueryExecution qexecEdu = QueryExecutionFactory.create(eduFieldQuery, model)) {
+//            ResultSet results = qexecEdu.execSelect();
+//            while (results.hasNext()) {
+//                QuerySolution soln = results.nextSolution();
+//                RDFNode eduField = soln.get("eduField");
+//                eduFields.add(eduField.toString());
+//            }
+//        }
+//
+//        // Query for companies
+//        String companyQueryString = "PREFIX job: <http://example.org/job#>\n" +
+//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+//                "PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>\n" +
+//                "SELECT ?company\n" +
+//                "WHERE {\n" +
+//                "  job:" + id + " job:company ?companyNode .\n" +
+//                "   ?companyNode vcard:Orgname ?company .\n" +
+//                "}";
+//        List<String> companies = new ArrayList<>();
+//
+//        Query companyQuery = QueryFactory.create(companyQueryString);
+//        try (QueryExecution qexecCompanies = QueryExecutionFactory.create(companyQuery, model)) {
+//            ResultSet results = qexecCompanies.execSelect();
+//            while (results.hasNext()) {
+//                QuerySolution soln = results.nextSolution();
+//                RDFNode company = soln.get("company");
+//                companies.add(company.toString());
+//            }
+//        }
+//
+//
+//        System.out.println("Ed fields: " + eduFields);
+//        System.out.println("Companies: " + companies);
 
 
 

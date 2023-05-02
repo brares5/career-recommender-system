@@ -2,7 +2,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
     xmlns:job="http://example.org/job#">
-  <rdf:Description rdf:about="http://example.org/job#3">
+  <job:Job rdf:about="http://example.org/job#3">
     <job:company>
       <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization3">
         <vcard:Orgname>Oracle</vcard:Orgname>
@@ -26,8 +26,8 @@
     </job:skills>
     <job:description>Does code in Java</job:description>
     <vcard:TITLE>Java Developer</vcard:TITLE>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/job#2">
+  </job:Job>
+  <job:Job rdf:about="http://example.org/job#2">
     <job:company>
       <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization2">
         <vcard:Orgname>Google</vcard:Orgname>
@@ -37,22 +37,22 @@
     </job:company>
     <job:experience>3</job:experience>
     <job:educational_fields>
-      <rdf:Seq>
+      <rdf:Bag>
         <rdf:li>Software engineering</rdf:li>
         <rdf:li>Telecommunication</rdf:li>
         <rdf:li>System analysis</rdf:li>
-      </rdf:Seq>
+      </rdf:Bag>
     </job:educational_fields>
     <job:skills>
-      <rdf:Seq>
+      <rdf:Bag>
         <rdf:li>Creative thinking</rdf:li>
         <rdf:li>Problem identification</rdf:li>
-      </rdf:Seq>
+      </rdf:Bag>
     </job:skills>
     <job:description>Research, analyze and evaluate requirements for existing or new IT applications and operating systems, design, develop, test and maintain software solutions to meet these requirements.</job:description>
     <job:title>Software engineer</job:title>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/job#1">
+  </job:Job>
+  <job:Job rdf:about="http://example.org/job#1">
     <job:company>
       <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization1">
         <vcard:Orgname>Adobe</vcard:Orgname>
@@ -76,5 +76,5 @@
     </job:skills>
     <job:description>Designs, analyzes and tests software solutions to meet user needs.</job:description>
     <job:title>Analyst</job:title>
-  </rdf:Description>
+  </job:Job>
 </rdf:RDF>

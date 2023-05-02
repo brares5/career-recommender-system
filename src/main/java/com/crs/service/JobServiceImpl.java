@@ -25,6 +25,9 @@ public class JobServiceImpl implements JobService {
 //        this.jobRepository = jobRepository;
 //    }
 
+//    String source = JobServiceImpl.class.getClassLoader().getResource("jobs.rdf").getPath();
+
+
 
     @Override
     public Job getJobById(Long id) {
@@ -104,7 +107,7 @@ public class JobServiceImpl implements JobService {
                 "SELECT ?eduField\n" +
                 "WHERE {\n" +
                 "  job:" + id + " job:educational_fields ?eduFields .\n" +
-                "   ?eduFields rdf:_1|rdf:_2 ?eduField .\n" +
+                "   ?eduFields rdf:_1|rdf:_2|rdf:_3 ?eduField .\n" +
                 "}";
         List<String> eduFields = new ArrayList<>();
 

@@ -71,8 +71,9 @@ public class RDFExample {
         }
 
         try {
-            out = new FileOutputStream(destination);
-            Resource job2 = model.getResource("http://example.org/job#2");
+            String destination2 = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\testremove.rdf";
+            out = new FileOutputStream(destination2);
+            Resource job2 = model.getResource("http://example.org/job#1");
             model.removeAll(null, null, job2);
             model.removeAll(job2, null, null);
 
@@ -81,18 +82,18 @@ public class RDFExample {
 
 
 
-            String skillsURI = "http://example.org/skills#" + "2";
+            String skillsURI = "http://example.org/skills#" + "1";
             Resource skills = model.getResource(skillsURI);
             model.removeAll(skills, null, null);
             model.removeAll(null, null, skills);
 
 
-            String eduFieldsURI = "http://example.org/edufields#" + "2";
+            String eduFieldsURI = "http://example.org/edufields#" + "1";
             Resource eduFields = model.getResource(eduFieldsURI);
             model.removeAll(eduFields, null, null);
             model.removeAll(null, null, eduFields);
 
-            String organizationURI = "http://www.w3.org/2001/vcard-rdf/3.0#Organization2";
+            String organizationURI = "http://www.w3.org/2001/vcard-rdf/3.0#Organization1";
             Resource organization = model.getResource(organizationURI);
             model.removeAll(organization, null, null);
             model.removeAll(null, null, organization);

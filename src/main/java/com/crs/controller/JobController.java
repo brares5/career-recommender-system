@@ -35,4 +35,12 @@ public class JobController {
     public void save(@RequestBody Job job) {
         jobService.createJob(job);
     }
+
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        jobService.deleteJob(id);
+    }
+
 }

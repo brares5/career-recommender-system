@@ -1,0 +1,55 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+    xmlns:job="http://example.org/job#">
+  <job:Job rdf:about="http://example.org/job#3">
+    <job:company>
+      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization3">
+        <vcard:Orgname>Oracle</vcard:Orgname>
+        <vcard:Orgname>Microsoft</vcard:Orgname>
+        <vcard:Orgname>Google</vcard:Orgname>
+      </rdf:Description>
+    </job:company>
+    <job:experience>4</job:experience>
+    <job:educational_fields>
+      <rdf:Bag rdf:about="http://example.org/edufields#3">
+        <rdf:li>System analysis</rdf:li>
+        <rdf:li>Basic programming</rdf:li>
+        <rdf:li>Analysis and making decisions</rdf:li>
+      </rdf:Bag>
+    </job:educational_fields>
+    <job:skills>
+      <rdf:Bag rdf:about="http://example.org/skills#3">
+        <rdf:li>Taking decisions</rdf:li>
+        <rdf:li>Information gathering</rdf:li>
+      </rdf:Bag>
+    </job:skills>
+    <job:description>Does code in Java</job:description>
+    <vcard:TITLE>Java Developer</vcard:TITLE>
+  </job:Job>
+  <job:Job rdf:about="http://example.org/job#2">
+    <job:company>
+      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization2">
+        <vcard:Orgname>Google</vcard:Orgname>
+        <vcard:Orgname>Microsoft</vcard:Orgname>
+        <vcard:Orgname>UPB</vcard:Orgname>
+      </rdf:Description>
+    </job:company>
+    <job:experience>3</job:experience>
+    <job:educational_fields>
+      <rdf:Bag rdf:about="http://example.org/edufields#2">
+        <rdf:li>Software engineering</rdf:li>
+        <rdf:li>Telecommunication</rdf:li>
+        <rdf:li>System analysis</rdf:li>
+      </rdf:Bag>
+    </job:educational_fields>
+    <job:skills>
+      <rdf:Bag rdf:about="http://example.org/skills#2">
+        <rdf:li>Creative thinking</rdf:li>
+        <rdf:li>Problem identification</rdf:li>
+      </rdf:Bag>
+    </job:skills>
+    <job:description>Research, analyze and evaluate requirements for existing or new IT applications and operating systems, design, develop, test and maintain software solutions to meet these requirements.</job:description>
+    <job:title>Software engineer</job:title>
+  </job:Job>
+</rdf:RDF>

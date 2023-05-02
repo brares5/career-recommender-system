@@ -334,6 +334,46 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public void deleteJob(Long id) {
-//        jobRepository.deleteById(id);
+
+        Model model = ModelFactory.createDefaultModel();
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = RDFDataMgr.open(source);
+            model.read(in, null);
+            model.write(System.out);
+            in.close();
+
+            out = new FileOutputStream(destination);
+            Resource jobToDelete = model.getResource("http://example.org/job#" + id);
+            model.removeAll(null, null, jobToDelete);
+            model.removeAll(jobToDelete, null, null);
+
+            model.remove(model.listStatements(jobToDelete, null, (RDFNode) null));
+            model.remove(model.listStatements(null, null, (RDFNode) jobToDelete));
+
+
+
+            String skillsURI = "http://example.org/skills#" + id;
+            Resource skills = model.getResource(skillsURI);
+            model.removeAll(skills, null, null);
+            model.removeAll(null, null, skills);
+
+
+            String eduFieldsURI = "http://example.org/edufields#" + id;
+            Resource eduFields = model.getResource(eduFieldsURI);
+            model.removeAll(eduFields, null, null);
+            model.removeAll(null, null, eduFields);
+
+            String organizationURI = "http://www.w3.org/2001/vcard-rdf/3.0#Organization" + id;
+            Resource organization = model.getResource(organizationURI);
+            model.removeAll(organization, null, null);
+            model.removeAll(null, null, organization);
+
+            model.write(out, "RDF/XML-ABBREV");
+            out.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

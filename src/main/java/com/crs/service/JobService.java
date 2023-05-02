@@ -2,12 +2,15 @@ package com.crs.service;
 
 import com.crs.model.Job;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface JobService {
 
     Job getJobById(Long id);
-    Optional<Job> getJobByTitle(String title);
+
+    List<Job> getAllJobs();
+    Long getLargestId();
     void createJob(Job job);
     void updateJob(Job newJob, Long id);
 

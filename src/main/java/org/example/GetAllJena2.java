@@ -29,6 +29,12 @@ public class GetAllJena2 {
             while (jobResources.hasNext()) {
                 Resource jobResource = jobResources.next();
 
+                // Get the object's id
+                String resourceURI = jobResource.getURI();
+                String id = resourceURI.substring(resourceURI.indexOf("#") + 1);
+                System.out.println("Id: " + id);
+
+
                 // Get the properties of the job
                 Property titleProperty = model.getProperty(nsJob + "title");
                 Property descriptionProperty = model.getProperty(nsJob + "description");
@@ -42,7 +48,8 @@ public class GetAllJena2 {
                 String description = jobResource.getProperty(descriptionProperty).getObject().toString();
                 RDFNode skillsNode = jobResource.getProperty(skillsProperty).getObject();
                 RDFNode educationalFieldsNode = jobResource.getProperty(educationalFieldsProperty).getObject();
-                String experience = jobResource.getProperty(experienceProperty).getObject().toString();
+                int experience = Integer.parseInt(jobResource.getProperty(experienceProperty).getObject().toString());
+
 
                 // Print the job information
                 System.out.println("Title: " + title);

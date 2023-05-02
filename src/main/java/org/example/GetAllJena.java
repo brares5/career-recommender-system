@@ -73,9 +73,6 @@ public class GetAllJena {
 
             // Get the company nodes
             List<String> companies = new ArrayList<>();
-
-
-
             // Get the resource with the given URI
             Resource companyResource = model.getResource("http://www.w3.org/2001/vcard-rdf/3.0#Organization1");
 

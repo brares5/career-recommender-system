@@ -6,13 +6,13 @@
     <job:title>Analyst</job:title>
     <job:description>Designs, analyzes and tests software solutions to meet user needs.</job:description>
     <job:skills>
-      <rdf:Bag>
+      <rdf:Bag rdf:about="http://example.org/skills#1">
         <rdf:li>Information gathering</rdf:li>
         <rdf:li>Taking decisions and solving problems</rdf:li>
       </rdf:Bag>
     </job:skills>
     <job:educational_fields>
-      <rdf:Bag>
+      <rdf:Bag rdf:about="http://example.org/edufields#1">
         <rdf:li>System analysis</rdf:li>
         <rdf:li>Basic programming</rdf:li>
         <rdf:li>Analysis and making decisions</rdf:li>
@@ -31,13 +31,13 @@
     <job:title>Software engineer</job:title>
     <job:description>Research, analyze and evaluate requirements for existing or new IT applications and operating systems, design, develop, test and maintain software solutions to meet these requirements.</job:description>
     <job:skills>
-      <rdf:Bag>
+      <rdf:Bag rdf:about="http://example.org/skills#2">
         <rdf:li>Creative thinking</rdf:li>
         <rdf:li>Problem identification</rdf:li>
       </rdf:Bag>
     </job:skills>
     <job:educational_fields>
-      <rdf:Bag>
+      <rdf:Bag rdf:about="http://example.org/edufields#2">
         <rdf:li>Software engineering</rdf:li>
         <rdf:li>Telecommunication</rdf:li>
         <rdf:li>System analysis</rdf:li>

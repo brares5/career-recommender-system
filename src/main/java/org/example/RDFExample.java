@@ -18,6 +18,10 @@ public class RDFExample {
         String destination = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\blabla.rdf";
         String nsJob = "http://example.org/job#";
         String nsVcard = "http://www.w3.org/2001/vcard-rdf/3.0#";
+        String skillsNS = "http://example.org/skills#";
+        String eduFieldsNS = "http://example.org/edufields#";
+
+
         Model model = ModelFactory.createDefaultModel();
         InputStream in = null;
         OutputStream out = null;
@@ -32,29 +36,33 @@ public class RDFExample {
 
 
             String[] skills = {"Taking decisions", "Information gathering"};
-            Bag skillsBag = model.createBag();
+            Resource skillsResource = model.createResource(skillsNS + "3", RDF.Bag);
+            Bag skillsBag = model.createBag(String.valueOf(skillsResource));
             for (String skill : skills) {
                 skillsBag.add(model.createTypedLiteral(skill));
             }
             job.addProperty(model.createProperty("http://example.org/job#skills"), skillsBag);
 
             String[] educationalFields = {"System analysis", "Basic programming", "Analysis and making decisions"};
-            Seq fieldsSeq = model.createSeq();
+            Resource eduFieldsResource = model.createResource(eduFieldsNS + "3", RDF.Bag);
+            Bag fieldsBag = model.createBag(String.valueOf(eduFieldsResource));
             for (String field : educationalFields) {
-                fieldsSeq.add(model.createTypedLiteral(field));
+                fieldsBag.add(model.createTypedLiteral(field));
             }
-            job.addProperty(model.createProperty("http://example.org/job#educational_fields"), fieldsSeq);
+            job.addProperty(model.createProperty("http://example.org/job#educational_fields"), fieldsBag);
             job.addProperty(RDF.type, model.createResource(nsJob + "Job"));
 
 
             job
-                    .addProperty(model.createProperty(nsJob, "experience"), "4")
-                    .addProperty(model.createProperty(nsJob, "company"), model.createResource(nsVcard + "Organization3")
-                            .addProperty(VCARD.Orgname, "Google"))
-                    .addProperty(model.createProperty(nsJob, "company"), model.createResource(nsVcard + "Organization3")
-                            .addProperty(VCARD.Orgname, "Microsoft"))
-                    .addProperty(model.createProperty(nsJob, "company"), model.createResource(nsVcard + "Organization3")
-                            .addProperty(VCARD.Orgname, "Oracle"));
+                    .addProperty(model.createProperty(nsJob, "experience"), "4");
+
+            job.
+                    addProperty(model.createProperty(nsJob, "company"),
+                            model.createResource(nsVcard + "Organization3").addProperty(VCARD.Orgname, "Google"))
+                    .addProperty(model.createProperty(nsJob, "company"),
+                            model.createResource(nsVcard + "Organization3").addProperty(VCARD.Orgname, "Microsoft"))
+                    .addProperty(model.createProperty(nsJob, "company"),
+                            model.createResource(nsVcard + "Organization3").addProperty(VCARD.Orgname, "Oracle"));
             out = new FileOutputStream(destination);
             model.write(out, "RDF/XML-ABBREV");
             out.close();
@@ -62,20 +70,41 @@ public class RDFExample {
             System.err.println("Error reading/writing RDF file: " + ex.getMessage());
         }
 
-//        try {
-//            out = new FileOutputStream(destination);
-//            Resource job2 = model.getResource("http://example.org/job#2");
-//            model.removeAll(null, null, job2);
-//            model.removeAll(job2, null, null);
-//
-//            model.remove(model.listStatements(job2, null, (RDFNode) null));
-//            model.remove(model.listStatements(null, null, (RDFNode) job2));
-//            model.write(System.out);
-//            model.write(out, "RDF/XML-ABBREV");
-//            out.close();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            out = new FileOutputStream(destination);
+            Resource job2 = model.getResource("http://example.org/job#2");
+            model.removeAll(null, null, job2);
+            model.removeAll(job2, null, null);
+
+            model.remove(model.listStatements(job2, null, (RDFNode) null));
+            model.remove(model.listStatements(null, null, (RDFNode) job2));
+
+
+
+            String skillsURI = "http://example.org/skills#" + "2";
+            Resource skills = model.getResource(skillsURI);
+            model.removeAll(skills, null, null);
+            model.removeAll(null, null, skills);
+
+
+            String eduFieldsURI = "http://example.org/edufields#" + "2";
+            Resource eduFields = model.getResource(eduFieldsURI);
+            model.removeAll(eduFields, null, null);
+            model.removeAll(null, null, eduFields);
+
+            String organizationURI = "http://www.w3.org/2001/vcard-rdf/3.0#Organization2";
+            Resource organization = model.getResource(organizationURI);
+            model.removeAll(organization, null, null);
+            model.removeAll(null, null, organization);
+
+
+
+            model.write(System.out);
+            model.write(out, "RDF/XML-ABBREV");
+            out.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 //        try {
 //            out = new FileOutputStream(destination);

@@ -1,41 +1,41 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
-         xmlns:job="http://example.org/job#">
-  <job:Job rdf:about="http://example.org/job#1">
-    <job:title>Analyst</job:title>
-    <job:description>Designs, analyzes and tests software solutions to meet user needs.</job:description>
-    <job:skills>
-      <rdf:Bag rdf:about="http://example.org/skills#1">
-        <rdf:li>Information gathering</rdf:li>
-        <rdf:li>Taking decisions and solving problems</rdf:li>
-      </rdf:Bag>
-    </job:skills>
-    <job:educational_fields>
-      <rdf:Bag rdf:about="http://example.org/edufields#1">
-        <rdf:li>System analysis</rdf:li>
-        <rdf:li>Basic programming</rdf:li>
-        <rdf:li>Analysis and making decisions</rdf:li>
-      </rdf:Bag>
-    </job:educational_fields>
-    <job:experience>1</job:experience>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+    xmlns:job="http://example.org/job#">
+  <job:Job rdf:about="http://example.org/job#3">
     <job:company>
-      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization1">
-         <vcard:Orgname>Microsoft</vcard:Orgname>
-         <vcard:Orgname>Cegeka</vcard:Orgname>
-         <vcard:Orgname>Adobe</vcard:Orgname>
+      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization3">
+        <vcard:Orgname>Adobe</vcard:Orgname>
+        <vcard:Orgname>Microsoft</vcard:Orgname>
+        <vcard:Orgname>Oracle</vcard:Orgname>
       </rdf:Description>
     </job:company>
-  </job:Job>
-  <job:Job rdf:about="http://example.org/job#2">
-    <job:title>Software engineer</job:title>
-    <job:description>Research, analyze and evaluate requirements for existing or new IT applications and operating systems, design, develop, test and maintain software solutions to meet these requirements.</job:description>
+    <job:experience>4</job:experience>
+    <job:educational_fields>
+      <rdf:Bag rdf:about="http://example.org/edufields#3">
+        <rdf:li>Security risks comprehension</rdf:li>
+        <rdf:li>Cybersecurity</rdf:li>
+        <rdf:li>Operating Systems</rdf:li>
+      </rdf:Bag>
+    </job:educational_fields>
     <job:skills>
-      <rdf:Bag rdf:about="http://example.org/skills#2">
-        <rdf:li>Creative thinking</rdf:li>
-        <rdf:li>Problem identification</rdf:li>
+      <rdf:Bag rdf:about="http://example.org/skills#3">
+        <rdf:li>Identification of objects, actions and events</rdf:li>
+        <rdf:li>Information gathering</rdf:li>
       </rdf:Bag>
     </job:skills>
+    <job:description>Secures computer systems and networks, analyzes risks, develops policies, installs and configures security software, and monitors systems.</job:description>
+    <job:title>Specialist in IT systems security</job:title>
+  </job:Job>
+  <job:Job rdf:about="http://example.org/job#2">
+    <job:company>
+      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization2">
+        <vcard:Orgname>Google</vcard:Orgname>
+        <vcard:Orgname>Microsoft</vcard:Orgname>
+        <vcard:Orgname>UPB</vcard:Orgname>
+      </rdf:Description>
+    </job:company>
+    <job:experience>3</job:experience>
     <job:educational_fields>
       <rdf:Bag rdf:about="http://example.org/edufields#2">
         <rdf:li>Software engineering</rdf:li>
@@ -43,13 +43,38 @@
         <rdf:li>System analysis</rdf:li>
       </rdf:Bag>
     </job:educational_fields>
-    <job:experience>3</job:experience>
+    <job:skills>
+      <rdf:Bag rdf:about="http://example.org/skills#2">
+        <rdf:li>Creative thinking</rdf:li>
+        <rdf:li>Problem identification</rdf:li>
+      </rdf:Bag>
+    </job:skills>
+    <job:description>Research, analyze and evaluate requirements for existing or new IT applications and operating systems, design, develop, test and maintain software solutions to meet these requirements.</job:description>
+    <job:title>Software engineer</job:title>
+  </job:Job>
+  <job:Job rdf:about="http://example.org/job#1">
     <job:company>
-              <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization2">
-                <vcard:Orgname>UPB</vcard:Orgname>
-                <vcard:Orgname>Microsoft</vcard:Orgname>
-                <vcard:Orgname>Google</vcard:Orgname>
-              </rdf:Description>
+      <rdf:Description rdf:about="http://www.w3.org/2001/vcard-rdf/3.0#Organization1">
+        <vcard:Orgname>Adobe</vcard:Orgname>
+        <vcard:Orgname>Cegeka</vcard:Orgname>
+        <vcard:Orgname>Microsoft</vcard:Orgname>
+      </rdf:Description>
     </job:company>
+    <job:experience>1</job:experience>
+    <job:educational_fields>
+      <rdf:Bag rdf:about="http://example.org/edufields#1">
+        <rdf:li>System analysis</rdf:li>
+        <rdf:li>Basic programming</rdf:li>
+        <rdf:li>Analysis and making decisions</rdf:li>
+      </rdf:Bag>
+    </job:educational_fields>
+    <job:skills>
+      <rdf:Bag rdf:about="http://example.org/skills#1">
+        <rdf:li>Information gathering</rdf:li>
+        <rdf:li>Taking decisions and solving problems</rdf:li>
+      </rdf:Bag>
+    </job:skills>
+    <job:description>Designs, analyzes and tests software solutions to meet user needs.</job:description>
+    <job:title>Analyst</job:title>
   </job:Job>
 </rdf:RDF>

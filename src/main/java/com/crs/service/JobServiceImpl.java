@@ -6,6 +6,8 @@ import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.VCARD;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.io.FileOutputStream;
@@ -20,10 +22,11 @@ public class JobServiceImpl implements JobService {
 
 //    String source = JobServiceImpl.class.getClassLoader().getResource("jobs.rdf").getPath();
 
-    static String source = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\tryjobs.rdf";
+//    static String source = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\tryjobs.rdf";
     static String destination = "E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\example\\tryjobs.rdf";
 
-
+    ResourceLoader rs = new DefaultResourceLoader();
+    String source = rs.getResource("classpath:jobs.rdf").getFilename();
     @Override
     public Job getJobById(Long id) {
 //        model.read("jobs.rdf");

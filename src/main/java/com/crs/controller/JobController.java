@@ -1,8 +1,8 @@
 package com.crs.controller;
 
 
-import com.crs_first.model.Job;
-import com.crs_first.service.JobService;
+import com.crs.model.Job;
+import com.crs.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,16 +12,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/jobs")
 public class JobController {
-    private JobService jobService;
+    private final JobService jobService;
 
     @Autowired
     public JobController(JobService jobService) {
         this.jobService = jobService;
     }
 
-    @GetMapping("/{id}")
-    public Job getJob(@PathVariable Long id) {
-        return jobService.getJobById(id);
+    @GetMapping("/{subject}")
+    public Job getJob(@PathVariable String subject) {
+        return jobService.getJobBySubject(subject);
     }
 
     @GetMapping

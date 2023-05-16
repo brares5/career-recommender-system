@@ -1,4 +1,4 @@
-package com.crs_first;
+package com.crs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

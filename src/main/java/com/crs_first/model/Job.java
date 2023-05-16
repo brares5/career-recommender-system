@@ -1,4 +1,4 @@
-package com.crs.model;
+package com.crs_first.model;
 
 
 import lombok.*;

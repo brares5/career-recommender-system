@@ -1,9 +1,8 @@
-package com.crs.service;
+package com.crs_first.service;
 
-import com.crs.model.Job;
+import com.crs_first.model.Job;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface JobService {
 

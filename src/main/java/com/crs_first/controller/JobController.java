@@ -1,14 +1,13 @@
-package com.crs.controller;
+package com.crs_first.controller;
 
 
-import com.crs.model.Job;
-import com.crs.service.JobService;
+import com.crs_first.model.Job;
+import com.crs_first.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/jobs")

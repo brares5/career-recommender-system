@@ -1,6 +1,5 @@
-package com.crs.repository;
+package com.crs_first.repository;
 
-import com.crs.model.Job;
 import org.springframework.stereotype.Repository;
 
 @Repository

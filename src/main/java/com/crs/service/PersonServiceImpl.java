@@ -9,12 +9,11 @@ import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.DefaultResourceLoader;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -33,18 +32,19 @@ public class PersonServiceImpl implements PersonService {
     }
 
 
+    static String path = "crs.owl";
+    static String filePath = Paths.get(path).toAbsolutePath().toString();
+
+
     @Override
     public void createPerson(Person p) {
 
-        Resource resource = rs.getResource("classpath:crs.owl");
-        File file;
+        // TODO: make the code below into a separate function
         String encodedPath = null;
         try {
-            file = resource.getFile();
-            String absolutePath = file.getAbsolutePath();
-            System.out.println("Absolute path: " + absolutePath);
-            encodedPath = absolutePath.replace("\\", "/").replace(" ", "%20");
-        } catch (IOException e) {
+            encodedPath = filePath.replace("\\", "/").replace(" ", "%20");
+            System.out.println("Encoded path: " + encodedPath);
+        } catch (Exception e) {
             System.out.println("Error");
         }
 
@@ -99,16 +99,14 @@ public class PersonServiceImpl implements PersonService {
         manager.addAxiom(ontology, axiom);
 
 
-
-
         // Save the modified ontology to a file or output to the console
         try {
-            manager.saveOntology(ontology, IRI.create(new File("E:\\CTI eng\\an 4\\licenta\\career-recommender-system\\src\\main\\java\\org\\job\\newcrs.owl")));
+            manager.saveOntology(ontology, IRI.create(new File(filePath)));
+
             System.out.println("Individual declaration added to the ontology.");
         } catch (OWLOntologyStorageException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-
 
 
     }
@@ -117,21 +115,14 @@ public class PersonServiceImpl implements PersonService {
     public List<Job> classifyPerson(String personName) {
         List<Job> jobs = new ArrayList<>();
 
-
-        Resource resource = rs.getResource("classpath:crs.owl");
-        File file;
+        // TODO: make the code below into a separate function
         String encodedPath = null;
         try {
-            file = resource.getFile();
-            String absolutePath = file.getAbsolutePath();
-            System.out.println("Absolute path: " + absolutePath);
-            encodedPath = absolutePath.replace("\\", "/").replace(" ", "%20");
-        } catch (IOException e) {
-            // Handle exception
+            encodedPath = filePath.replace("\\", "/").replace(" ", "%20");
+            System.out.println("Encoded path: " + encodedPath);
+        } catch (Exception e) {
             System.out.println("Error");
         }
-
-
 
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         OWLOntology ontology;
@@ -153,14 +144,13 @@ public class PersonServiceImpl implements PersonService {
         // Get the classes the individual belongs to
         NodeSet<OWLClass> classes = hermit.getTypes(individual, true);
 
-//         Iterate over the classes and print their IRIs
+        // Iterate over the classes and print their IRIs
         for (Node<OWLClass> classNode : classes) {
             OWLClass owlClass = classNode.getRepresentativeElement();
             System.out.println("Individual belongs to class: " + owlClass.getIRI());
             String className = owlClass.getIRI().getFragment();
             System.out.println("Individual belongs to title job: " + className);
             jobs.add(jobService.getJobBySubject(className));
-//            System.out.println(jobService.getJobBySubject(className).toString());
         }
         hermit.dispose();
         return jobs;

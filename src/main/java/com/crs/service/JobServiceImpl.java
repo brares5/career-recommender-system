@@ -18,6 +18,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +35,9 @@ public class JobServiceImpl implements JobService {
     static String source = rs.getResource("classpath:crs.owl").getFilename();
 
 
+    static String path = "crs.owl";
+    static String filePath = Paths.get(path).toAbsolutePath().toString();
+
     @Override
     public Job getJobBySubject(String subject) {
         String jobTitle = null;
@@ -42,7 +47,7 @@ public class JobServiceImpl implements JobService {
 
 
         OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
-        model.read(source);
+        model.read(filePath);
 
         // Get the OWL classes
         OntClass jobClass = model.getOntClass("http://www.crs.com/ontologies/crs.owl#" + subject);
@@ -132,7 +137,7 @@ public class JobServiceImpl implements JobService {
         List<Job> jobs = new ArrayList<>();
 
         OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
-        model.read(source);
+        model.read(filePath);
 
         String allJobSubjectsSparql = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" +

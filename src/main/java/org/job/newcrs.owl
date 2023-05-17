@@ -1077,24 +1077,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Communication"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Dexterity"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InvestigativeSkills"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Precision"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#AnalysisAndTakingDecisions"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Biology"/>
@@ -1113,6 +1095,24 @@
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#SoftwareEngineering"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#SystemAnalysis"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Telecommunications"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Communication"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Dexterity"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InvestigativeSkills"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Precision"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

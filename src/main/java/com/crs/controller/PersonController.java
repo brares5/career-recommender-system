@@ -25,7 +25,7 @@ public class PersonController {
         personService.createPerson(person);
     }
 
-    @GetMapping("/{personName}")
+    @GetMapping("/recommended/{personName}")
     public List<Job> classifyPerson(@PathVariable String personName) {
         return personService.classifyPerson(personName);
     }

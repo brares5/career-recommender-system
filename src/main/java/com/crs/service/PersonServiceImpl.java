@@ -7,6 +7,7 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +25,12 @@ import java.util.TreeSet;
 public class PersonServiceImpl implements PersonService {
     static ResourceLoader rs = new DefaultResourceLoader();
     static String source = rs.getResource("classpath:crs.owl").getFilename();
-    static JobService jobService;
+    private final JobService jobService;
+
+    @Autowired
+    public PersonServiceImpl(JobService jobService) {
+        this.jobService = jobService;
+    }
 
 
     @Override
@@ -109,7 +114,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public List<Job> classifyPerson(Person p) {
+    public List<Job> classifyPerson(String personName) {
         List<Job> jobs = new ArrayList<>();
 
 
@@ -142,7 +147,7 @@ public class PersonServiceImpl implements PersonService {
         System.out.println(hermit.isConsistent());
 
 
-        OWLNamedIndividual individual = ontology.getOWLOntologyManager().getOWLDataFactory().getOWLNamedIndividual(IRI.create("http://www.crs.com/ontologies/crs.owl#" + p.getName()));
+        OWLNamedIndividual individual = ontology.getOWLOntologyManager().getOWLDataFactory().getOWLNamedIndividual(IRI.create("http://www.crs.com/ontologies/crs.owl#" + personName));
 
 
         // Get the classes the individual belongs to
@@ -154,10 +159,10 @@ public class PersonServiceImpl implements PersonService {
             System.out.println("Individual belongs to class: " + owlClass.getIRI());
             String className = owlClass.getIRI().getFragment();
             System.out.println("Individual belongs to title job: " + className);
-//            jobs.add(jobService.getJobBySubject(className));
-            System.out.println(jobService.getJobBySubject(className).toString());
+            jobs.add(jobService.getJobBySubject(className));
+//            System.out.println(jobService.getJobBySubject(className).toString());
         }
         hermit.dispose();
-        return null;
+        return jobs;
     }
 }

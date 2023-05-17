@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class Job {
-    private long id;
+    private String subject;
     private String title;
     private String comment;
     private List<String> skills;

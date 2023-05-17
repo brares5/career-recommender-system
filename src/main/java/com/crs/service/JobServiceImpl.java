@@ -124,7 +124,7 @@ public class JobServiceImpl implements JobService {
         queryExecutionSkills.close();
 
 
-        return new Job(0, jobTitle, jobComment, skills, educationalFields);
+        return new Job(subject, jobTitle, jobComment, skills, educationalFields);
     }
 
     @Override

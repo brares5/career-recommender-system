@@ -29,17 +29,17 @@ public class JobController {
         return jobService.getAllJobs();
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody Job job) {
-        jobService.createJob(job);
-    }
-
-
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
-        jobService.deleteJob(id);
-    }
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public void save(@RequestBody Job job) {
+//        jobService.createJob(job);
+//    }
+//
+//
+//    @DeleteMapping("/{id}")
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+//    public void delete(@PathVariable Long id) {
+//        jobService.deleteJob(id);
+//    }
 
 }

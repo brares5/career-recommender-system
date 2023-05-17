@@ -8,6 +8,6 @@ import java.util.List;
 public interface PersonService {
 
     void createPerson(Person p);
-    List<Job> classifyPerson(Person p);
+    List<Job> classifyPerson(String personName);
 
 }

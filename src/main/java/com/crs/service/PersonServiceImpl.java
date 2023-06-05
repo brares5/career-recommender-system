@@ -14,10 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 
 @Service
@@ -150,9 +147,18 @@ public class PersonServiceImpl implements PersonService {
             System.out.println("Individual belongs to class: " + owlClass.getIRI());
             String className = owlClass.getIRI().getFragment();
             System.out.println("Individual belongs to title job: " + className);
-            jobs.add(jobService.getJobBySubject(className));
+            if (Objects.equals(className, "Job") || Objects.equals(className, "Thing")) {
+                continue;
+            } else {
+                jobs.add(jobService.getJobBySubject(className));
+            }
+
         }
         hermit.dispose();
+
+        if (jobs.isEmpty()) {
+            jobs.add(new Job(null, null, null, null, null));
+        }
         return jobs;
     }
 }

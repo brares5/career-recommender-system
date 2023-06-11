@@ -1197,6 +1197,104 @@
     
 
 
+    <!-- http://www.crs.com/ontologies/crs.owl#abbbb -->
+
+    <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#abbbb">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Job"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#AnalysisAndTakingDecisions"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Business"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ForeignLanguages"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#HighLevelProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#MachineLearning"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Mathematics"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Medicine"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Psychology"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#SystemAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Transportation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Communication"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#InvestigativeSkills"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.crs.com/ontologies/crs.owl#abcd -->
 
     <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#abcd">
@@ -1283,6 +1381,84 @@
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
                         <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.crs.com/ontologies/crs.owl#abgg -->
+
+    <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#abgg">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Job"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Business"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ClientOrientedServices"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Cybersecurity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ForeignLanguages"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#HighLevelProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#MachineLearning"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#OperatingSystems"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Psychology"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#SystemAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Telecommunications"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Communication"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1733,6 +1909,178 @@
     
 
 
+    <!-- http://www.crs.com/ontologies/crs.owl#rrtw -->
+
+    <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#rrtw">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Job"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#AnalysisAndTakingDecisions"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Biology"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Business"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ClientOrientedServices"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Mathematics"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Medicine"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Transportation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#InvestigativeSkills"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.crs.com/ontologies/crs.owl#tttt -->
+
+    <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#tttt">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Job"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Cybersecurity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Law"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Mathematics"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Medicine"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#OperatingSystems"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Psychology"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Telecommunications"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Transportation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Communication"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.crs.com/ontologies/crs.owl#user5 -->
 
     <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#user5">
@@ -1811,6 +2159,92 @@
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
                         <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.crs.com/ontologies/crs.owl#vali -->
+
+    <owl:NamedIndividual rdf:about="http://www.crs.com/ontologies/crs.owl#vali">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Job"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#AnalysisAndTakingDecisions"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Business"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ForeignLanguages"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#HighLevelProgramming"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#MachineLearning"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Mathematics"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Medicine"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Psychology"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasEducationalField"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#SystemAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#Communication"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.crs.com/ontologies/crs.owl#hasSkill"/>
+                        <owl:someValuesFrom rdf:resource="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1908,6 +2342,24 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Communication"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Dexterity"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InvestigativeSkills"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Precision"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
+            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#AnalysisAndTakingDecisions"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#BasicProgramming"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Biology"/>
@@ -1927,24 +2379,6 @@
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#SystemAnalysis"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Telecommunications"/>
             <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Transportation"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Communication"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ComputerUse"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#CreativeThinking"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#DataAnalysis"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Dexterity"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#IdentificationOfObjectsActionsAndEvents"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InformationGathering"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#InvestigativeSkills"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#Precision"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#ProblemIdentification"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#TakingDecisionsAndSolvingProblems"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#UnderstandingWrittenTexts"/>
-            <rdf:Description rdf:about="http://www.crs.com/ontologies/crs.owl#VerbalWrittenComprehension"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

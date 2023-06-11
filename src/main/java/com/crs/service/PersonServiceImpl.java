@@ -55,7 +55,7 @@ public class PersonServiceImpl implements PersonService {
             return;
         }
 
-        // Create an instance of OWLNamedIndividual for Matthew
+        // Create an instance of OWLNamedIndividual for the person
         OWLDataFactory dataFactory = manager.getOWLDataFactory();
         IRI personIRI = IRI.create("http://www.crs.com/ontologies/crs.owl#" + p.getName());
         OWLNamedIndividual person = dataFactory.getOWLNamedIndividual(personIRI);

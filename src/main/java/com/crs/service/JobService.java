@@ -9,9 +9,5 @@ public interface JobService {
     Job getJobBySubject(String subject);
 
     List<Job> getAllJobs();
-//    Long getLargestId();
-    void createJob(Job job);
-    void updateJob(Job newJob, Long id);
 
-    void deleteJob(Long id);
 }

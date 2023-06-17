@@ -170,18 +170,4 @@ public class JobServiceImpl implements JobService {
         return jobs;
     }
 
-    @Override
-    public void createJob(Job job) {
-
-    }
-
-    @Override
-    public void updateJob(Job newJob, Long id) {
-
-    }
-
-    @Override
-    public void deleteJob(Long id) {
-
-    }
 }
